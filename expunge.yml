@@ -1,0 +1,46 @@
+---
+metadata:
+  title: |
+    Expungement App
+  short title: |
+    Expungement
+  description: |
+    This interview finds if you are eligible for an expunction
+  authors:
+    - name: Tom Brooke
+      organization: Campbell Law School;
+  revision_date: 09-10-2019
+---
+question: |
+  What is your first and last name?
+fields:
+  - Your Full Name: client_name
+---
+question: |
+  How many convictions do you have?
+fields:
+  -  Number of Convictions: convictions
+     datatype: integer
+---
+question: |
+  Were they on the same day?
+yesno: same_day
+---
+code: |
+  if convictions == 1:
+     can_proceed = True
+  elif convictions > 1: 
+     if same_day == True:
+       can_proceed = True
+     else:
+       can_proceed = False
+---
+mandatory: True
+question: ${client_name} your report is finished.
+subquestion: |
+  % if can_proceed:
+  Congratulations, ${client_name} you can proceed to the clinic.
+  % else:
+  I am sorry you are not eligible for an expunction.
+  % endif
+---
