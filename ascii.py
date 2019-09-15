@@ -7,8 +7,3 @@
 # chr(65) returns A
 # you will need to loop through the range of numbers from  from 1  to 255
 # your output should look something like:  65 = A
-
-
-for i in range(1,255):
-    ch = chr(i)
-    print(i, ' = ', ch)
