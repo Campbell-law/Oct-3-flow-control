@@ -1,7 +1,8 @@
 
 # Flow control and Starting Docassemble
 
-## For Python try the ascii.py program
+## For Python try the ascii.py programm and the star.py program
+## They may be a bit more challenging
 
 # Introduction to YAML
 
